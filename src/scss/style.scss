@@ -1,0 +1,119 @@
+@import "./foundation/reset";
+@import "./foundation/variable";
+@import "./foundation/font";
+
+@import "./layout/container";
+@import "./layout/header";
+@import "./layout/footer";
+
+@import "./object/project/top";
+@import "./object/component/button";
+
+$color_white: #b4bbd2;
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.tategaki {
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c1c6da;
+  z-index: 1;
+  transition: 1s;
+  img {
+    margin: 4rem;
+    height: 45%;
+  }
+  // &-bg {
+  //   background: url("../image/img-gradient.jpg");
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  //   mix-blend-mode: lighten;
+  // }
+  &-title {
+    font-family: "Mukta", sans-serif;
+    margin: 2rem auto 1rem 1rem;
+    letter-spacing: 0.7rem;
+    font-size: 1rem;
+    text-align: start;
+    line-height: 3rem;
+  }
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.main {
+  pointer-events: none;
+  .tategaki {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: $color_white;
+    letter-spacing: 0.3rem;
+    font-size: 0.9rem;
+    text-align: start;
+    line-height: 3rem;
+    height: 100%;
+
+    -moz-text-shadow: 0px 1px 3px rgba(139, 147, 173, 0.46);
+    -webkit-text-shadow: 0px 1px 3px rgba(139, 147, 173, 0.46);
+    -ms-text-shadow: 0px 1px 3px rgba(139, 147, 173, 0.46);
+    text-shadow: 0px 1px 3px rgba(139, 147, 173, 0.46);
+
+    @media screen and (max-width: 480px) {
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.slider {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $color_white;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    height: 0.4rem;
+    background: transparent;
+    border-radius: 10px;
+    border: solid 1px white;
+    vertical-align: top;
+  }
+  /* WebKit向けのつまみ */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: solid 1px white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+  }
+}
